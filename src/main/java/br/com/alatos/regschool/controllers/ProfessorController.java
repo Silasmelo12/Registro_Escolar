@@ -1,6 +1,7 @@
 package br.com.alatos.regschool.controllers;
 
 import br.com.alatos.regschool.models.Professor;
+import br.com.alatos.regschool.models.StatusProfessor;
 import br.com.alatos.regschool.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,4 +23,11 @@ public class ProfessorController {
         return mv;
     }
 
+    @GetMapping("/professor/new")
+    public ModelAndView nnew(){
+
+        ModelAndView mv = new ModelAndView("professores/new");
+        mv.addObject("statusProfessor", StatusProfessor.values());
+        return mv;
+    }
 }
