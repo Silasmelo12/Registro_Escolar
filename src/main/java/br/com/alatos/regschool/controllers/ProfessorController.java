@@ -6,10 +6,12 @@ import br.com.alatos.regschool.models.StatusProfessor;
 import br.com.alatos.regschool.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -26,11 +28,17 @@ public class ProfessorController {
     }
 
     @PostMapping("/professores")
-    public String create(RequisicaoNovoProfessor requisicaoNovoProfessor){
-        Professor professor = requisicaoNovoProfessor.toProfessor();
-        this.professorRepository.save(professor);
+    public String create(@Valid RequisicaoNovoProfessor requisicaoNovoProfessor, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            System.out.println("Tem erros");
+            return "redirect:professor/new";
+        }else{
+            Professor professor = requisicaoNovoProfessor.toProfessor();
+            this.professorRepository.save(professor);
+            return "redirect:professores";
+        }
 
-        return "redirect:professores";
+
     }
     @GetMapping("/professor/new")
     public ModelAndView nnew(){

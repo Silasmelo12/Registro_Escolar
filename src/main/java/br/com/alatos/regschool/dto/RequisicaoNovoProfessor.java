@@ -2,13 +2,21 @@ package br.com.alatos.regschool.dto;
 
 import br.com.alatos.regschool.models.Professor;
 import br.com.alatos.regschool.models.StatusProfessor;
+import org.springframework.data.repository.NoRepositoryBean;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 // é ua classe DTO (Data Transfer Object)
 public class RequisicaoNovoProfessor {
 
+    @NotBlank
+    @NotNull
     private String                     nome;
+    @NotNull
+    @DecimalMin(value = "0.0", inclusive = false)
     private BigDecimal              salario;
     private StatusProfessor statusProfessor;
 
