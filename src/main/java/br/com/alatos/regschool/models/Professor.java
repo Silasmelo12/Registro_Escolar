@@ -11,20 +11,18 @@ public class Professor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String anome;
+    private String nome;
     private BigDecimal salario;
     @Enumerated(EnumType.STRING)
     private StatusProfessor statusProfessor;
 
-    public Professor(String anome, BigDecimal salario, StatusProfessor statusProfessor) {
-        this.anome = anome;
+    public Professor(String nome, BigDecimal salario, StatusProfessor statusProfessor) {
+        this.nome = nome;
         this.salario = salario;
         this.statusProfessor = statusProfessor;
     }
 
-    public Professor(){
-
-    }
+    public Professor(){}
 
     public Long getId() {
         return id;
@@ -35,11 +33,11 @@ public class Professor {
     }
 
     public String getNome() {
-        return anome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        this.anome = nome;
+        this.nome = nome;
     }
 
     public BigDecimal getSalario() {

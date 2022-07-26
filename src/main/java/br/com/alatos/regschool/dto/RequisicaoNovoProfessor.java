@@ -3,13 +3,21 @@ package br.com.alatos.regschool.dto;
 import br.com.alatos.regschool.models.Professor;
 import br.com.alatos.regschool.models.StatusProfessor;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 // é ua classe DTO (Data Transfer Object)
 public class RequisicaoNovoProfessor {
 
+    @NotNull
+    @NotBlank
     private String                     nome;
+    @DecimalMin(value = "0.0",inclusive = false)
+    @NotNull
     private BigDecimal              salario;
+    @NotNull
     private StatusProfessor statusProfessor;
 
     public BigDecimal getSalario() {
