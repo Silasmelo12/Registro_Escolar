@@ -4,35 +4,15 @@
 <head th:replace="~{fragmentos :: head('Home')}"></head>
 
 <body>
-<header>
-    <div class="container mt-3">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a aria-current="page" class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a aria-current="page" class="nav-link active" href="/professores">Professores</a>
-            </li>
-            <li class="nav-item">
-                <a aria-current="page" class="nav-link active" href="/alunos">Alunos</a>
-            </li>
-        </ul>
-    </div>
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col=12">
-                <h1>Sistemas de registro escolares</h1>
-            </div>
-        </div>
-    </div>
-</header>
+
+<header th:replace="~{fragmentos :: header('Sistemas de registros escolares')}"></header>
 
 <main>
     <div class="container mt-4">
         <div class="list-group">
-            <button type="button" class="lit-group-item list-group-item-cation"
+            <button type="button" class="lit-group-item list-group-item-action"
                     th:onclick="'windows.location.href=\'/professores\''">Professores</button>
-            <button type="button" class="lit-group-item list-group-item-cation">Alunos</button>
+            <button type="button" class="lit-group-item list-group-item-action">Alunos</button>
         </div>
     </div>
 </main>
