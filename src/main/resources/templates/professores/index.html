@@ -1,6 +1,8 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="~{fragmentos :: head('Lista de professores')}"></head>
+
 <body>
 
 <header th:replace="~{fragmentos :: header('Lista de professores')}"></header>
@@ -26,7 +28,7 @@
                     <td class="col-4" th:text="${professor.nome}">Jacob</td>
                     <td class="col-2" th:text="${professor.salario}">Thornton</td>
                     <td class="col-1" th:text="${professor.StatusProfessor}">@fat</td>
-                    <td class="col-1"><a href="#">Detalhes</a></td>
+                    <td class="col-1"><a th:href="@{/professores/{professorId}(professorId=${professor.id})}">Detalhes</a></td>
                     <td class="col-1"><a href="/pro">Editar</a></td>
                     <td class="col-1"><a href="#">Deletar</a></td>
                 </tr>
