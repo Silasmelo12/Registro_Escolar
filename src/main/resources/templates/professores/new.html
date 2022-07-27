@@ -1,47 +1,50 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Novo professor</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Novo professor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-  <div class="row">
-    <h1>Novo professor</h1>
-  </div>
-
-  <div class="container">
     <div class="row">
-      <form action="/professores" method="POST">
-        <div class="mb-3">
-          <label class="form-label">Nome</label>
-          <input class="form-control" type="text" name="nome">
-          <div></div>
+        <h1>Novo professor</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form th:object="${requisicaoNovoProfessor}" action="/professores" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Nome</label>
+                    <input class="form-control" type="text" th:field="*{nome}">
+                    <div></div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Salário</label>
+                    <input class="form-control" type="text" th:field="*{salario}">
+                    <div></div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" th:field="*{statusProfessor}">
+                        <option th:each="status : ${statusProfessor}"
+                                th:value="${status}" th:text="${status}"></option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="submit">Submeter</button>
+                <a href="javascript:history.back()">Voltar</a>
+            </form>
+
         </div>
-        <div class="mb-3">
-          <label class="form-label">Salário</label>
-          <input class="form-control" type="text" name="salario">
-          <div></div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Status</label>
-          <select class="form-select" name="statusProfessor">
-            <option th:each="status : ${statusProfessor}"
-                    th:value="${status}" th:text="${status}"></option>
-          </select>
-        </div>
-        <button class="btn btn-primary" type="submit">Submeter</button>
-        <a href="javascript:history.back()">Voltar</a>
-      </form>
 
     </div>
 
-  </div>
-
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 </html>

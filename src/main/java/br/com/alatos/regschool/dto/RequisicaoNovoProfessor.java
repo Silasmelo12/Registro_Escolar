@@ -2,6 +2,7 @@ package br.com.alatos.regschool.dto;
 
 import br.com.alatos.regschool.models.Professor;
 import br.com.alatos.regschool.models.StatusProfessor;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
@@ -13,10 +14,10 @@ public class RequisicaoNovoProfessor {
 
     @NotNull
     @NotBlank
-    private String                     nome;
+    private String nome;
     @DecimalMin(value = "0.0",inclusive = false)
     @NotNull
-    private BigDecimal              salario;
+    private BigDecimal salario;
     @NotNull
     private StatusProfessor statusProfessor;
 
