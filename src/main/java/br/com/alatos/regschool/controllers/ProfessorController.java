@@ -34,7 +34,7 @@ public class ProfessorController {
     @GetMapping(path = "/new")
     public ModelAndView novo(RequisicaoNovoProfessor requisicaoNovoProfessor) {
         ModelAndView mv = new ModelAndView("professores/new");
-        mv.addObject("statusProfessor", StatusProfessor.values());
+        mv.addObject("listaStatusProfessor", StatusProfessor.values());
         return mv;
     }
 
@@ -45,11 +45,13 @@ public class ProfessorController {
 
         if (bindingResult.hasErrors()) {
             System.out.println("Tem erros");
-            return new ModelAndView("professores/new");
+            ModelAndView mv = new ModelAndView("professores/new");
+            mv.addObject("listaStatusProfessor", StatusProfessor.values());
+            return mv;
         } else {
             Professor professor = requisicaoNovoProfessor.toProfessor();
             this.professorRepository.save(professor);
-            return new ModelAndView("professores");
+            return new ModelAndView("redirect:professores");
         }
     }
 }
