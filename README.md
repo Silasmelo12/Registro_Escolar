@@ -1,3 +1,13 @@
-# regschool
+# Projeto de Registro escolar
 
-Um projeto em Java utilizando Spring Boot MVC e thymeleaf.
+Este é um registro escolar que tem as funcionalidades:
+
+1. registrar professor, seu salário e a situação atual,  
+
+2. registrar aluno e sua situação atual. 
+
+   ​
+
+Projeto feito na linguagem de programação **_Java_** utilizando **_Spring Boot MVC_** e **_Thymeleaf_**.
+
+O banco de dados utilizado é o **_mysql_** rodando em um **_container_** no **_Docker_**.
