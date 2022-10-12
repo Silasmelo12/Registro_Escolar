@@ -2,7 +2,9 @@
 
 Este é um registro escolar que tem as funcionalidades:
 
-1. registrar professor, seu salário e a situação atual,  
+1. registrar professor, seu salário e a situação atual.
+
+   - ver detalhes, deletar e editar.
 
 2. registrar aluno e sua situação atual. 
 
