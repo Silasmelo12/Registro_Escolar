@@ -2,13 +2,13 @@ version: '3.1'
 services:
   db:
     image: mysql
-    container_name: regschool
+    container_name: registroEscolar
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
     - "3306:3306"
     volumes:
-    - regschool_data:/var/lib/mysql
+    - regschool_data:/var/lib/registroEscolar
 
 volumes:
   regschool_data:

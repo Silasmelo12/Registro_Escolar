@@ -21,9 +21,9 @@ public class ProfessorController {
     @Autowired
     ProfessorRepository professorRepository;
 
-    @GetMapping//("/professores")
+    @GetMapping
     public ModelAndView index() {
-        List<Professor> listaProfessores = this.professorRepository.findAll();
+        List<Professor> listaProfessores = this.professorRepository.findAll();// o erro 500 é aqui
         ModelAndView mv = new ModelAndView("professores/index");
         mv.addObject("professor", listaProfessores);
         return mv;

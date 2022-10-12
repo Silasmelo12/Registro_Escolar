@@ -3,8 +3,10 @@ package br.com.alatos.regschool.models;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity //entidade do banco de dados
+
 //@table
+@Entity //entidade do banco de dados
+//@Table
 public class Professor {
 
     @Id

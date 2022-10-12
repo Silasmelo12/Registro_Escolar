@@ -2,7 +2,6 @@ package br.com.alatos.regschool.dto;
 
 import br.com.alatos.regschool.models.Professor;
 import br.com.alatos.regschool.models.StatusProfessor;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +10,6 @@ import java.math.BigDecimal;
 
 // é ua classe DTO (Data Transfer Object)
 public class RequisicaoNovoProfessor {
-
     @NotNull
     @NotBlank
     private String nome;

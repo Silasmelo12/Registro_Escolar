@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
-public class RegschoolApplication {
+public class RegistroEscolarApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RegschoolApplication.class, args);
+		SpringApplication.run(RegistroEscolarApplication.class, args);
 	}
 
 	@GetMapping
