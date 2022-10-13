@@ -23,12 +23,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="professor: ${professor}">
-                    <th class="col-1" scope="row" th:text="${professor.getId()}">1</th>
-                    <td class="col-4" th:text="${professor.nome}">Jacob</td>
-                    <td class="col-2" th:text="${professor.salario}">Thornton</td>
-                    <td class="col-1" th:text="${professor.StatusProfessor}">@fat</td>
-                    <td class="col-1"><a th:href="@{/professores/{professorId}(professorId=${professor.id})}">Detalhes</a></td>
+                <!-- erro em <tr th:each="professor: ${professor}"> a seguir -->
+                <!-- o nome do objeto precisa ser igual-->
+                <tr th:each="listaProfessores: ${listaProfessores}">
+                    <th class="col-1" scope="row" th:text="${listaProfessores.getId()}">1</th>
+                    <td class="col-4" th:text="${listaProfessores.nome}">Jacob</td>
+                    <td class="col-2" th:text="${listaProfessores.salario}">Thornton</td>
+                    <td class="col-1" th:text="${listaProfessores.StatusProfessor}">@fat</td>
+                    <td class="col-1"><a th:href="@{/listaProfessores/{professorId}(professorId=${listaProfessores.id})}">Detalhes</a></td>
                     <td class="col-1"><a href="/pro">Editar</a></td>
                     <td class="col-1"><a href="#">Deletar</a></td>
                 </tr>

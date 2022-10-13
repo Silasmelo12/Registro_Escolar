@@ -25,7 +25,7 @@ public class ProfessorController {
     public ModelAndView index() {
         List<Professor> listaProfessores = this.professorRepository.findAll();// o erro 500 é aqui
         ModelAndView mv = new ModelAndView("professores/index");
-        mv.addObject("professor", listaProfessores);
+        mv.addObject("listaProfessores", listaProfessores);
         return mv;
     }
 
@@ -37,7 +37,7 @@ public class ProfessorController {
     }
 
     //bindingResult vem do @Valid que é o resultado do empacotamento
-    @PostMapping//("/professores")
+    @PostMapping
     public ModelAndView create(@Valid RequisicaoNovoProfessor requisicaoNovoProfessor, BindingResult bindingResult) {
         System.out.println("O que está vindo" + requisicaoNovoProfessor.getNome());
 
