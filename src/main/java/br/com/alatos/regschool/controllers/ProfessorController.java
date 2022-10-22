@@ -52,7 +52,6 @@ public class ProfessorController {
             return new ModelAndView("redirect:professores/"+professor.getId());
         }
     }
-
     @GetMapping("/{id}")
     public ModelAndView show(@PathVariable Long id){
         Optional<Professor> optional = this.professorRepository.findById(id);

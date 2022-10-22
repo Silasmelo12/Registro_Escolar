@@ -1,11 +1,11 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{fragmentos :: head('Lista de professores')}"></head>
+<head th:replace="~{fragmentos :: head('Lista de alunos')}"></head>
 
 <body>
 
-<header th:replace="~{fragmentos :: header('Lista de professores')}"></header>
+<header th:replace="~{fragmentos :: header('Lista de alunos')}"></header>
 
 <div class="container">
     <div class="row">
@@ -25,12 +25,12 @@
                 <tbody>
                 <!-- erro em <tr th:each="professor: ${professor}"> a seguir -->
                 <!-- o nome do objeto precisa ser igual-->
-                <tr th:each="listaProfessores: ${listaProfessores}">
-                    <th class="col-1" scope="row" th:text="${listaProfessores.getId()}">1</th>
-                    <td class="col-4" th:text="${listaProfessores.nome}">Jacob</td>
-                    <td class="col-2" th:text="${listaProfessores.salario}">Thornton</td>
-                    <td class="col-1" th:text="${listaProfessores.StatusProfessor}">@fat</td>
-                    <td class="col-1"><a th:href="@{/listaProfessores/{professorId}(professorId=${listaProfessores.id})}">Detalhes</a></td>
+                <tr th:each="listaAlunos: ${listaAlunos}">
+                    <th class="col-1" scope="row" th:text="${listaAlunos.getId()}">1</th>
+                    <td class="col-4" th:text="${listaAlunos.nome}">Jacob</td>
+                    <td class="col-2" th:text="${listaAlunos.salario}">Thornton</td>
+                    <td class="col-1" th:text="${listaAlunos.StatusProfessor}">@fat</td>
+                    <td class="col-1"><a th:href="@{/listaAlunos/{professorId}(professorId=${listaProfessores.id})}">Detalhes</a></td>
                     <td class="col-1"><a href="/pro">Editar</a></td>
                     <td class="col-1"><a href="#">Deletar</a></td>
                 </tr>
@@ -40,7 +40,7 @@
 
     </div>
     <div class="row">
-        <a href="/professores/new">Novo Professor</a>
+        <a href="/alunos/newAluno">Novo Aluno</a>
     </div>
 </div>
 
